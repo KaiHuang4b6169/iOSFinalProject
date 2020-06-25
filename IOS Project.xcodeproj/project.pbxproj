@@ -72,7 +72,7 @@
 		9BE902E22493C21B001C35EE /* IOS Project */ = {
 			isa = PBXGroup;
 			children = (
-				9BE9030A24969DDD001C35EE /* Commen */,
+				9BE9030A24969DDD001C35EE /* Common */,
 				9BE9030524969143001C35EE /* Home */,
 				9BE9030424969138001C35EE /* BikeReport */,
 				9BE9030324969129001C35EE /* FuelManage */,
@@ -131,12 +131,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		9BE9030A24969DDD001C35EE /* Commen */ = {
+		9BE9030A24969DDD001C35EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				9BE9030B24969DF8001C35EE /* AddViewComponent.swift */,
 			);
-			path = Commen;
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
