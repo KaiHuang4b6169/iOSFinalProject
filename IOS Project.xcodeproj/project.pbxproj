@@ -77,7 +77,6 @@
 				9BE9030424969138001C35EE /* BikeReport */,
 				9BE9030324969129001C35EE /* FuelManage */,
 				9BE90302249690FD001C35EE /* MaintenanceManage */,
-				9BE902E32493C21B001C35EE /* AppDelegate.swift */,
 				9BE902E52493C21B001C35EE /* SceneDelegate.swift */,
 				9BE902EA2493C21B001C35EE /* ContentView.swift */,
 				9BE902EC2493C21C001C35EE /* Assets.xcassets */,
@@ -102,6 +101,7 @@
 			children = (
 				9BE902FC24955182001C35EE /* MaintenanceManage.swift */,
 				9BE90306249691A3001C35EE /* MaintenanceAddView.swift */,
+				9BE902E32493C21B001C35EE /* AppDelegate.swift */,
 			);
 			path = MaintenanceManage;
 			sourceTree = "<group>";
