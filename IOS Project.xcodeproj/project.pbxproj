@@ -21,6 +21,7 @@
 		9BE90307249691A3001C35EE /* MaintenanceAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE90306249691A3001C35EE /* MaintenanceAddView.swift */; };
 		9BE9030924969D1E001C35EE /* FuelAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE9030824969D1E001C35EE /* FuelAddView.swift */; };
 		9BE9030C24969DF8001C35EE /* AddViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE9030B24969DF8001C35EE /* AddViewComponent.swift */; };
+		DF56C43324A514F80068CC35 /* MaintenaceRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C43224A514F80068CC35 /* MaintenaceRowElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9BE90306249691A3001C35EE /* MaintenanceAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceAddView.swift; sourceTree = "<group>"; };
 		9BE9030824969D1E001C35EE /* FuelAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelAddView.swift; sourceTree = "<group>"; };
 		9BE9030B24969DF8001C35EE /* AddViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewComponent.swift; sourceTree = "<group>"; };
+		DF56C43224A514F80068CC35 /* MaintenaceRowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenaceRowElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +74,14 @@
 		9BE902E22493C21B001C35EE /* IOS Project */ = {
 			isa = PBXGroup;
 			children = (
+				DF56C42F24A4BF5A0068CC35 /* Utility */,
 				9BE9030A24969DDD001C35EE /* Common */,
 				9BE9030524969143001C35EE /* Home */,
 				9BE9030424969138001C35EE /* BikeReport */,
 				9BE9030324969129001C35EE /* FuelManage */,
 				9BE90302249690FD001C35EE /* MaintenanceManage */,
 				9BE902E52493C21B001C35EE /* SceneDelegate.swift */,
+				9BE902E32493C21B001C35EE /* AppDelegate.swift */,
 				9BE902EA2493C21B001C35EE /* ContentView.swift */,
 				9BE902EC2493C21C001C35EE /* Assets.xcassets */,
 				9BE902F12493C21C001C35EE /* LaunchScreen.storyboard */,
@@ -101,7 +105,7 @@
 			children = (
 				9BE902FC24955182001C35EE /* MaintenanceManage.swift */,
 				9BE90306249691A3001C35EE /* MaintenanceAddView.swift */,
-				9BE902E32493C21B001C35EE /* AppDelegate.swift */,
+				DF56C43224A514F80068CC35 /* MaintenaceRowElement.swift */,
 			);
 			path = MaintenanceManage;
 			sourceTree = "<group>";
@@ -137,6 +141,13 @@
 				9BE9030B24969DF8001C35EE /* AddViewComponent.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DF56C42F24A4BF5A0068CC35 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 				9BE902E62493C21B001C35EE /* SceneDelegate.swift in Sources */,
 				9BE903012495C7FD001C35EE /* BikeReport.swift in Sources */,
 				9BE902EB2493C21B001C35EE /* ContentView.swift in Sources */,
+				DF56C43324A514F80068CC35 /* MaintenaceRowElement.swift in Sources */,
 				9BE9030924969D1E001C35EE /* FuelAddView.swift in Sources */,
 				9BE902FB24954A4F001C35EE /* HomeView.swift in Sources */,
 				9BE9030C24969DF8001C35EE /* AddViewComponent.swift in Sources */,

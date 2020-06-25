@@ -16,8 +16,18 @@ struct MView: PreviewProvider {
 }
 
 struct MaintenanceManage: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @State var isAddModal: Bool = false
-    
+    @FetchRequest(
+        // 2.
+        entity: Maintenance.entity(),
+        // 3.
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Maintenance.date, ascending: true)
+        ]
+        //,predicate: NSPredicate(format: "genre contains 'Action'")
+        // 4.
+    ) var maintenances: FetchedResults<Maintenance>
     var body: some View {
         VStack{
             ZStack{
@@ -29,7 +39,8 @@ struct MaintenanceManage: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight:25, alignment: .trailing)
                 .sheet(isPresented: $isAddModal, content: {
-                    MaintenanceAddView()
+                    MaintenanceAddView(isPresented: self.$isAddModal).environment(\.managedObjectContext, self.managedObjectContext)
+                    
                 })
             }.frame(maxWidth: .infinity)
             
@@ -51,33 +62,14 @@ struct MaintenanceManage: View {
                 .cornerRadius(5)
                 .padding(.horizontal, 10.0)
             }.frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
-            
-            List {
-                MaintenaceRowElement()
-                MaintenaceRowElement()
-                MaintenaceRowElement()
-                MaintenaceRowElement()
+          
+            List(maintenances, id: \.id) { maintenance in
+                MaintenaceRowElement(maintenance: maintenance)
             }.frame(maxHeight: .infinity)
         }.frame(maxWidth: UIScreen.main.bounds.width-40)
     }
 }
 
 
-struct MaintenaceRowElement: View{
-    var body: some View{
-        HStack {
-            HStack{
-                VStack(alignment:.trailing){
-                    Text("X月")
-                    Text("XX日")
-                }
-                Image("default").resizable().padding(.horizontal, 0.0).scaledToFit().frame(width: 75,height: 75)
-                Text("輪胎")
-            }.frame(maxWidth: .infinity,alignment: .leading)
-            VStack{
-                Text("$81,000")
-                Text("8 里程數")
-            }.frame(alignment: .trailing)
-        }.frame(maxWidth: .infinity)
-    }
-}
+
+
