@@ -22,10 +22,9 @@ struct MaintenaceRowElement: View{
             HStack{
                 VStack(alignment:.trailing){
                     Text(Self.releaseFormatter.string(from: maintenance.date))
-                    .font(.caption)
                 }
                 Image(maintenance.imageName).resizable().padding(.horizontal, 0.0).scaledToFit().frame(width: 75,height: 75)
-                Text(maintenance.name).font(.caption)
+                Text(maintenance.name)
             }.frame(maxWidth: .infinity,alignment: .leading)
             VStack{
                 Text("花費:" + "$" + "\(maintenance.cost)")

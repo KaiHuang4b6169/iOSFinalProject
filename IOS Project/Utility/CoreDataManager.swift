@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 class CoreDataManager {
     
@@ -50,9 +51,14 @@ class CoreDataManager {
         return saveFlag
     }
     
-    public func deleteMaintenance(maintenance: Maintenance) -> Bool{
+    public func deleteMaintenance(maintenanceId: UUID) -> Bool{
         var deleteMaintenanceFlag : Bool
-        self.moc.delete(maintenance)
+        let maintenances = getAllMaintenances()
+        for maintenance in maintenances {
+            if maintenance.id == maintenanceId {
+                self.moc.delete(maintenance)
+            }
+        }
         deleteMaintenanceFlag = saveContext()
         return deleteMaintenanceFlag
     }

@@ -66,8 +66,8 @@ struct MaintenanceManage: View {
     
     func deleteMaintenance(at offsets: IndexSet) {
         offsets.forEach { index in
-            let movie = self.maintenanceManageVM.maintenances[index]
-            //self.managedObjectContext.delete(movie)
+            let maintenanceViewModel = self.maintenanceManageVM.maintenances[index]
+            self.maintenanceManageVM.deleteMaintenance(maintenance: maintenanceViewModel)
         }
     }
 }

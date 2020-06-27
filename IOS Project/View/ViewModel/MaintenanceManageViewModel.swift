@@ -37,7 +37,8 @@ class MaintenanceManageViewModel: ObservableObject {
     
     public func deleteMaintenance(maintenance: MaintenanceViewModel) {
         var deleteFlag: Bool
-        deleteFlag = false
+        deleteFlag = CoreDataManager.shared.deleteMaintenance(maintenanceId: maintenance.id)
+        updateMaintenancesData(update: deleteFlag)
     }
 }
 
@@ -62,5 +63,4 @@ class MaintenanceViewModel {
         self.date = maintenance.date!
         self.cost = Int(maintenance.cost)
     }
-    
 }
