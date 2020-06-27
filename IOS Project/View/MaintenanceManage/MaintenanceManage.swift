@@ -16,18 +16,12 @@ struct MView: PreviewProvider {
 }
 
 struct MaintenanceManage: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @ObservedObject var maintenanceManageVM: MaintenanceManageViewModel
+    
+    init() {
+        self.maintenanceManageVM = MaintenanceManageViewModel()
+    }
     @State var isAddModal: Bool = false
-    @FetchRequest(
-        // 2.
-        entity: Maintenance.entity(),
-        // 3.
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Maintenance.date, ascending: true)
-        ]
-        //,predicate: NSPredicate(format: "genre contains 'Action'")
-        // 4.
-    ) var maintenances: FetchedResults<Maintenance>
     var body: some View {
         VStack{
             ZStack{
@@ -39,7 +33,7 @@ struct MaintenanceManage: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight:25, alignment: .trailing)
                 .sheet(isPresented: $isAddModal, content: {
-                    MaintenanceAddView(isPresented: self.$isAddModal).environment(\.managedObjectContext, self.managedObjectContext)
+                    MaintenanceAddView(maintenanceManageVM: self.maintenanceManageVM, isPresented: self.$isAddModal)
                     
                 })
             }.frame(maxWidth: .infinity)
@@ -62,11 +56,19 @@ struct MaintenanceManage: View {
                 .cornerRadius(5)
                 .padding(.horizontal, 10.0)
             }.frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
-          
-            List(maintenances, id: \.id) { maintenance in
-                MaintenaceRowElement(maintenance: maintenance)
+            List {
+                ForEach(self.maintenanceManageVM.maintenances, id: \.id) { maintenance in
+                    MaintenaceRowElement(maintenance: maintenance)
+                }.onDelete(perform: deleteMaintenance)
             }.frame(maxHeight: .infinity)
         }.frame(maxWidth: UIScreen.main.bounds.width-40)
+    }
+    
+    func deleteMaintenance(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let movie = self.maintenanceManageVM.maintenances[index]
+            //self.managedObjectContext.delete(movie)
+        }
     }
 }
 

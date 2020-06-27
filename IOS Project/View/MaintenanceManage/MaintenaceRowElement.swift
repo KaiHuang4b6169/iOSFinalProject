@@ -11,7 +11,7 @@ import SwiftUI
 
 struct MaintenaceRowElement: View{
     
-    let maintenance: Maintenance
+    let maintenance: MaintenanceViewModel
     static let releaseFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -21,11 +21,11 @@ struct MaintenaceRowElement: View{
         HStack {
             HStack{
                 VStack(alignment:.trailing){
-                    maintenance.date.map { Text(Self.releaseFormatter.string(from: $0)) }
+                    Text(Self.releaseFormatter.string(from: maintenance.date))
                     .font(.caption)
                 }
-                Image(maintenance.imageName!).resizable().padding(.horizontal, 0.0).scaledToFit().frame(width: 75,height: 75)
-                maintenance.name.map(Text.init)
+                Image(maintenance.imageName).resizable().padding(.horizontal, 0.0).scaledToFit().frame(width: 75,height: 75)
+                Text(maintenance.name).font(.caption)
             }.frame(maxWidth: .infinity,alignment: .leading)
             VStack{
                 Text("花費:" + "$" + "\(maintenance.cost)")
@@ -35,7 +35,5 @@ struct MaintenaceRowElement: View{
         .onTapGesture {
             print("\(self.maintenance.cost)")
         }
-        
-        
     }
 }
