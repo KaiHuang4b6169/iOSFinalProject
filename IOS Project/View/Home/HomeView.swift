@@ -33,6 +33,8 @@ struct HomeView: View {
 struct BikeInfo: View {
     @State private var ImageHeight:CGFloat = 150
     @State private var ImageWidth:CGFloat = 150
+    @State private var bikeLicense = "XXXXX"
+    
     
     @State private var showAlert = false
     
@@ -42,7 +44,9 @@ struct BikeInfo: View {
             textField.placeholder = "機車車牌"
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in })
-        alert.addAction(UIAlertAction(title: "Done", style: .default) { _ in })
+    alert.addAction(UIAlertAction(title: "Done", style: .default) {
+         (action) in self.bikeLicense = "AAAA"
+    })
         showAlert(alert: alert)
     }
 
@@ -88,7 +92,7 @@ struct BikeInfo: View {
             HStack{
                 Image("default").resizable().padding(.horizontal, 0.0).scaledToFit().frame(width: ImageWidth,height: ImageHeight, alignment: .leading)
                 VStack(alignment: .leading){
-                    Text("機車牌照： ＸＸＸＸＸ").padding(.bottom, 20)
+                    Text("機車牌照： " + self.bikeLicense).padding(.bottom, 20)
                     Text("機車品牌： ＸＸ牌").padding(.bottom, 20)
                     Text("排氣量： ＸＸＸ cc").padding(.bottom, 20)
                     Text("發照日： xx/xx/xx")
