@@ -17,18 +17,23 @@ class LoadFuelInfo {
     func exec(){
         var urlString = "https://www.cpc.com.tw/GetOilPriceJson.aspx?type=TodayOilPriceString"
         if let url = URL(string: urlString){
-            URLSession.shared.dataTask(with: url){
-                (data, response, error) in
-                let decoder = JSONDecoder()
-                if let data = data, let fuelInfoCodable = try?decoder.decode(FuelInfoCodable.self, from: data){
-                    self.codableToEntity(codable: fuelInfoCodable)
-                }
-            }.resume()
+//            URLSession.shared.dataTask(with: url){
+//                (data, response, error) in
+//                let decoder = JSONDecoder()
+//                if let data = data, let fuelInfoCodable = try?decoder.decode(FuelInfoCodable.self, from: data){
+//                    self.codableToEntity(codable: fuelInfoCodable)
+//                }
+//            }.resume()
+
+            let decoder = JSONDecoder()
+            if let data = try? Data(contentsOf: url), let fuelInfoCodable = try?decoder.decode(FuelInfoCodable.self, from: data){
+                self.codableToEntity(codable: fuelInfoCodable)
+            }
         }
     }
     
     func getFuelInfo()->FuelInfo{
-        return self.fuelInfo ?? FuelInfo(upOrDown: "",upOrDownPrice: "",fuel92: "",fuel95: "",fuel98: "")
+        return self.fuelInfo ?? FuelInfo(upOrDown: "上漲", upOrDownPrice: "0.0", fuel92: "0.0", fuel95: "0.0", fuel98: "0.0")
     }
     
     func codableToEntity(codable: FuelInfoCodable){

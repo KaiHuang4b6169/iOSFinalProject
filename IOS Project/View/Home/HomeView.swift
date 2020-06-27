@@ -105,6 +105,9 @@ struct BikeInfo: View {
 }
 
 struct TodayOilPrice: View{
+    @State var loadFuelInfo: LoadFuelInfo = LoadFuelInfo()
+    @State var flueInfo: FuelInfo = FuelInfo(upOrDown: "調漲", upOrDownPrice: "0.0", fuel92: "0.0", fuel95: "0.0", fuel98: "0.0")
+    
     var body: some View{
         VStack(alignment: .leading){
             Text("今日汽油零售價格")
@@ -113,9 +116,9 @@ struct TodayOilPrice: View{
                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/20.0/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color.red)
                 HStack{
-                    Text("本週汽油價格上漲")
+                    Text("本週汽油價格")
                         .fontWeight(.bold)
-                    Text("0.7").font(.title).fontWeight(.heavy)
+                    Text(flueInfo.upOrDown + flueInfo.upOrDownPrice).font(.title).fontWeight(.heavy)
                 }.foregroundColor(Color.white)
             }
             .frame(height: UIScreen.main.bounds.height/15)
@@ -123,18 +126,21 @@ struct TodayOilPrice: View{
             VStack(alignment: .leading){
                 HStack{
                     Text("92無鉛汽油：").font(.headline)
-                    Text("19.6").font(.headline).foregroundColor(Color.red)
+                    Text(flueInfo.fuel92).font(.headline).foregroundColor(Color.red)
                 }.padding(.vertical, 20)
                 HStack{
                     Text("95無鉛汽油：").font(.headline)
-                    Text("19.6").font(.headline).foregroundColor(Color.red)
+                    Text(flueInfo.fuel95).font(.headline).foregroundColor(Color.red)
                     
                 }.padding(.vertical, 20)
                 HStack{
                     Text("95無鉛汽油：").font(.headline)
-                    Text("19.6").font(.headline).foregroundColor(Color.red)
+                    Text(flueInfo.fuel98).font(.headline).foregroundColor(Color.red)
                 }.padding(.vertical, 20)
             }
-        }.frame(maxWidth: .infinity)
+        }.frame(maxWidth: .infinity).onAppear(){
+            self.loadFuelInfo.exec()
+            self.flueInfo = self.loadFuelInfo.getFuelInfo()
+        }
     }
 }
