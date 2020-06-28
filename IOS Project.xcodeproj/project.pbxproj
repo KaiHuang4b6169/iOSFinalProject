@@ -29,6 +29,7 @@
 		DF56C43C24A609030068CC35 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C43B24A609030068CC35 /* CoreDataManager.swift */; };
 		DF56C43E24A609E30068CC35 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C43D24A609E30068CC35 /* NSManagedObjectContextExtensions.swift */; };
 		DF56C44124A610E50068CC35 /* MaintenanceManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C44024A610E50068CC35 /* MaintenanceManageViewModel.swift */; };
+		DF56C44424A7AD9F0068CC35 /* FuelManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C44324A7AD9F0068CC35 /* FuelManageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DF56C43B24A609030068CC35 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DF56C43D24A609E30068CC35 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		DF56C44024A610E50068CC35 /* MaintenanceManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceManageViewModel.swift; sourceTree = "<group>"; };
+		DF56C44324A7AD9F0068CC35 /* FuelManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FuelManageViewModel.swift; path = ../../../../../../Documents/FuelManageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				DF56C44024A610E50068CC35 /* MaintenanceManageViewModel.swift */,
+				DF56C44324A7AD9F0068CC35 /* FuelManageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,8 +187,8 @@
 		DF56C44224A731080068CC35 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DF56C43F24A610780068CC35 /* ViewModel */,
 				9BE9030A24969DDD001C35EE /* Common */,
+				DF56C43F24A610780068CC35 /* ViewModel */,
 				9BE9030524969143001C35EE /* Home */,
 				9BE9030424969138001C35EE /* BikeReport */,
 				9BE9030324969129001C35EE /* FuelManage */,
@@ -282,6 +285,7 @@
 				9BE9030C24969DF8001C35EE /* AddViewComponent.swift in Sources */,
 				9BE902FF2495C589001C35EE /* FuelManage.swift in Sources */,
 				9BE902FD24955182001C35EE /* MaintenanceManage.swift in Sources */,
+				DF56C44424A7AD9F0068CC35 /* FuelManageViewModel.swift in Sources */,
 				9BE902E92493C21B001C35EE /* IOS_Project.xcdatamodeld in Sources */,
 				9BE90307249691A3001C35EE /* MaintenanceAddView.swift in Sources */,
 				DF56C44124A610E50068CC35 /* MaintenanceManageViewModel.swift in Sources */,
