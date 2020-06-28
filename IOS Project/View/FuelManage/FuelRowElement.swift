@@ -14,7 +14,7 @@ struct FuelRowElement: View{
     static let releaseFormatter: DateFormatter = {
       let formatter = DateFormatter()
       formatter.dateStyle = .long
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "yyyy\nMM/dd"
       return formatter
     }()
     var body: some View{
