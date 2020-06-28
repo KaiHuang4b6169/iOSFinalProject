@@ -34,9 +34,9 @@ struct MaintenanceAddView: View{
                 
                 self.addMaintenance(maintenanceItemName: self.maintenanceItemName, storeName: self.storeName, currentMilage: Int32(self.currentMilage) ?? 0, maintenanceDate: self.maintenanceDate, cost: Int32(self.cost) ?? 0, detailMessage: self.detailMessage)
                 self.isPresented = false
-                
             }) {
                 Text("新增")
+                
             }
         }.frame(maxWidth: UIScreen.main.bounds.width-40, maxHeight: .infinity, alignment: .top)
     }

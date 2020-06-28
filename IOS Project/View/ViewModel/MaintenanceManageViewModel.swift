@@ -41,6 +41,13 @@ class MaintenanceManageViewModel: ObservableObject {
         updateMaintenancesData(update: deleteFlag)
     }
     
+    public func updateMaintenance(maintenanceId: UUID, maintenanceItemName: String, storeName: String, currentMilage: Int32, maintenanceDate: Date, cost: Int32, detailMessage: String) {
+        var updateFlag: Bool
+        updateFlag = CoreDataManager.shared.updateMaintenance(maintenanceId: maintenanceId, maintenanceItemName: maintenanceItemName, storeName: storeName, currentMilage: currentMilage, maintenanceDate: maintenanceDate, cost: cost, detailMessage: detailMessage)
+            print(updateFlag)
+        updateMaintenancesData(update: updateFlag)
+    }
+    
     public func getReportData()  -> (Array<Int>, Array<Int>, Array<Int>, Array<Int>, Array<Int>){
         updateMaintenancesData(update: true)
         

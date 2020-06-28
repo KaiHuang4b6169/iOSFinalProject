@@ -45,8 +45,8 @@ struct MaintenanceManage: View {
 //            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
             List {
                 ForEach(self.maintenanceManageVM.maintenances, id: \.id) { maintenance in
-                    MaintenaceRowElement(maintenance: maintenance)
-                }.onDelete(perform: deleteMaintenance)
+                    MaintenaceRowElement(maintenance: maintenance, maintenanceManageVM: self.maintenanceManageVM)
+                }.onDelete(perform: deleteMaintenance)                 
             }.frame(maxHeight: .infinity)
         }.frame(maxWidth: UIScreen.main.bounds.width-40)
     }

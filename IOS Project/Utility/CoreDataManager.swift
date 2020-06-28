@@ -51,6 +51,23 @@ class CoreDataManager {
         return saveFlag
     }
     
+    public func updateMaintenance(maintenanceId: UUID, maintenanceItemName: String, storeName: String, currentMilage: Int32, maintenanceDate: Date, cost: Int32, detailMessage: String) -> Bool{
+        var updateMaintenanceFlag : Bool = false
+        let maintenances = getAllMaintenances()
+        for maintenance in maintenances {
+            if maintenance.id == maintenanceId {
+                maintenance.name = maintenanceItemName
+                maintenance.storeName = storeName
+                maintenance.milage = currentMilage
+                maintenance.date = maintenanceDate
+                maintenance.cost = cost
+                maintenance.detailMessage = detailMessage
+                updateMaintenanceFlag = saveContext()
+            }
+        }
+        
+        return updateMaintenanceFlag
+    }
     public func deleteMaintenance(maintenanceId: UUID) -> Bool{
         var deleteMaintenanceFlag : Bool
         let maintenances = getAllMaintenances()
@@ -104,6 +121,25 @@ class CoreDataManager {
         }
         deleteFuelConsumeFlag = saveContext()
         return deleteFuelConsumeFlag
+    }
+    
+    public func updateFuelConsume(fuelConsumeId: UUID, fuelItemName: String, fuelCompany: String, currentMilage: Int32, fuelDate: Date, cost: Int32, detailMessage: String, fuelCapacity: Int32) -> Bool {
+        var updateFuelConsumeFlag : Bool = false
+        let fuelConsumes = getAllFuelConsumes()
+        for fuelConsume in fuelConsumes {
+            if fuelConsume.id == fuelConsumeId {
+                fuelConsume.name = fuelItemName
+                fuelConsume.fuelCompany = fuelCompany
+                fuelConsume.milage = currentMilage
+                fuelConsume.date = fuelDate
+                fuelConsume.cost = cost
+                fuelConsume.detailMessage = detailMessage
+                fuelConsume.fuelCapacity = fuelCapacity
+               updateFuelConsumeFlag = saveContext()
+            }
+        }
+        
+        return updateFuelConsumeFlag
     }
     
     private func saveContext() -> Bool{

@@ -43,7 +43,7 @@ struct FuelManage: View {
 //            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
             List {
                 ForEach(self.fuelManageVM.fuelConsumes, id: \.id) { fuelConsume in
-                    FuelRowElement(fuelConsume: fuelConsume)
+                    FuelRowElement(fuelConsume: fuelConsume, fuelManageVM: self.fuelManageVM )
                 }.onDelete(perform: deleteFuelConsume)
             }.frame(maxHeight: .infinity)
         }.frame(maxWidth: UIScreen.main.bounds.width-40)
