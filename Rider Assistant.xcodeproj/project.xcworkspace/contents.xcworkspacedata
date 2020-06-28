@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:IOS Project.xcodeproj">
+      location = "self:/Users/kaihuang/Programming/iOSFinalProject/Rider Assistant.xcodeproj">
    </FileRef>
 </Workspace>

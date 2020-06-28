@@ -40,7 +40,7 @@ struct FuelManage: View {
                 })
             }.frame(maxWidth: .infinity)
             Divider()
-            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
+//            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
             List {
                 ForEach(self.fuelManageVM.fuelConsumes, id: \.id) { fuelConsume in
                     FuelRowElement(fuelConsume: fuelConsume)

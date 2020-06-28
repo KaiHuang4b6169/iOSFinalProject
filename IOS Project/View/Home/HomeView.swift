@@ -142,7 +142,7 @@ struct TodayOilPrice: View{
                     
                 }.padding(.vertical, 20)
                 HStack{
-                    Text("95無鉛汽油：").font(.headline)
+                    Text("98無鉛汽油：").font(.headline)
                     Text(flueInfo.fuel98).font(.headline).foregroundColor(Color.red)
                 }.padding(.vertical, 20)
             }

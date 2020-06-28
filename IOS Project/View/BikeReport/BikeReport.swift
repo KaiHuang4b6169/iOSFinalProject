@@ -23,8 +23,7 @@ struct BikeReportView: View {
             ZStack{
                 Text("機車報告").font(.title).frame(alignment:.center)
             }.frame(maxWidth: .infinity)
-            Divider()
-            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
+//            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
             Divider()
             FuelReport().frame(height: UIScreen.main.bounds.height/6)
             Divider()
@@ -39,7 +38,7 @@ struct FuelReport: View{
     @State var totalFuelCapacity: String = "0公升"
     var body: some View{
         VStack{
-            Text("油耗報告").font(.title).padding(.vertical)
+            Text("油耗報告").font(.headline).padding(.vertical)
             VStack{
                 ReportElement(label: "總加油價格", value: totalAddFuelCost)
                 ReportElement(label: "總消耗油量", value: totalFuelCapacity)
@@ -63,7 +62,7 @@ struct MaintenanceReport: View{
     @State var gearOilData = [0, 0]
     var body: some View{
         VStack{
-            Text("保養項目報告").font(.title).padding(.vertical)
+            Text("保養項目報告").font(.headline).padding(.vertical)
             VStack{
                 ReportElement(label: "總保養價格", value: totalMaintenenceCost)
                 List{

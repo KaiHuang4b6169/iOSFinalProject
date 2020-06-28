@@ -48,7 +48,7 @@
 		9BAFBDA124A7D6EF005C3BDA /* PairStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairStructure.swift; sourceTree = "<group>"; };
 		9BAFBDA524A83932005C3BDA /* BikeInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeInfoData.swift; sourceTree = "<group>"; };
 		9BAFBDAA24A8A5A5005C3BDA /* MaintenanceOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceOptions.swift; sourceTree = "<group>"; };
-		9BE902E02493C21B001C35EE /* IOS Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE902E02493C21B001C35EE /* Rider Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rider Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE902E32493C21B001C35EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BE902E52493C21B001C35EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9BE902E82493C21B001C35EE /* IOS_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IOS_Project.xcdatamodel; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		9BE902E12493C21B001C35EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BE902E02493C21B001C35EE /* IOS Project.app */,
+				9BE902E02493C21B001C35EE /* Rider Assistant.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,9 +227,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BE902DF2493C21B001C35EE /* IOS Project */ = {
+		9BE902DF2493C21B001C35EE /* Rider Assistant */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BE902F72493C21C001C35EE /* Build configuration list for PBXNativeTarget "IOS Project" */;
+			buildConfigurationList = 9BE902F72493C21C001C35EE /* Build configuration list for PBXNativeTarget "Rider Assistant" */;
 			buildPhases = (
 				9BE902DC2493C21B001C35EE /* Sources */,
 				9BE902DD2493C21B001C35EE /* Frameworks */,
@@ -239,9 +239,9 @@
 			);
 			dependencies = (
 			);
-			name = "IOS Project";
+			name = "Rider Assistant";
 			productName = "IOS Project";
-			productReference = 9BE902E02493C21B001C35EE /* IOS Project.app */;
+			productReference = 9BE902E02493C21B001C35EE /* Rider Assistant.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9BE902DB2493C21B001C35EE /* Build configuration list for PBXProject "IOS Project" */;
+			buildConfigurationList = 9BE902DB2493C21B001C35EE /* Build configuration list for PBXProject "Rider Assistant" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -272,7 +272,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BE902DF2493C21B001C35EE /* IOS Project */,
+				9BE902DF2493C21B001C35EE /* Rider Assistant */,
 			);
 		};
 /* End PBXProject section */
@@ -465,7 +465,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test.IOS-Project";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rider Assistant";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -484,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test.IOS-Project";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rider Assistant";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,7 +493,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BE902DB2493C21B001C35EE /* Build configuration list for PBXProject "IOS Project" */ = {
+		9BE902DB2493C21B001C35EE /* Build configuration list for PBXProject "Rider Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BE902F52493C21C001C35EE /* Debug */,
@@ -502,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BE902F72493C21C001C35EE /* Build configuration list for PBXNativeTarget "IOS Project" */ = {
+		9BE902F72493C21C001C35EE /* Build configuration list for PBXNativeTarget "Rider Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BE902F82493C21C001C35EE /* Debug */,

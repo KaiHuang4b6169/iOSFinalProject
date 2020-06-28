@@ -42,7 +42,7 @@ struct MaintenanceManage: View {
             
             Divider()
             
-            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
+//            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
             List {
                 ForEach(self.maintenanceManageVM.maintenances, id: \.id) { maintenance in
                     MaintenaceRowElement(maintenance: maintenance)
