@@ -13,9 +13,10 @@ struct MaintenaceRowElement: View{
     
     let maintenance: MaintenanceViewModel
     static let releaseFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter
+      let formatter = DateFormatter()
+      formatter.dateStyle = .long
+        formatter.dateFormat = "yyyy/MM/dd"
+      return formatter
     }()
     var body: some View{
         HStack {

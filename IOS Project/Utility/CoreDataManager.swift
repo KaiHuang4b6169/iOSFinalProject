@@ -63,6 +63,49 @@ class CoreDataManager {
         return deleteMaintenanceFlag
     }
     
+    public func getAllFuelConsumes() -> [FuelConsume] {
+        var fuelConsumes = [FuelConsume]()
+        let fuelConsumeRequest : NSFetchRequest<FuelConsume> = FuelConsume.fetchRequest()
+        
+        do {
+            fuelConsumes = try self.moc.fetch(fuelConsumeRequest)
+        }catch let error as NSError{
+            print(error)
+        }
+        return fuelConsumes
+    }
+    
+    func addFuelConsume(fuelItemName: String, fuelCompany: String, currentMilage: Int32, fuelDate: Date, cost: Int32, detailMessage: String, fuelCapacity: Int32) ->Bool {
+        var saveFlag : Bool
+        let newFuelConsume = FuelConsume(context: self.moc)
+        
+        newFuelConsume.id = UUID()
+        newFuelConsume.name = fuelItemName
+        newFuelConsume.fuelCompany = fuelCompany
+        newFuelConsume.milage = currentMilage
+        newFuelConsume.cost = cost
+        newFuelConsume.detailMessage = detailMessage
+        newFuelConsume.date = fuelDate
+        newFuelConsume.imageName = fuelItemName
+        newFuelConsume.fuelCapacity = fuelCapacity
+        // 3
+        saveFlag = saveContext()
+        return saveFlag
+        
+    }
+    
+    public func deleteFuelConsume(fuelConsumeId: UUID) -> Bool{
+        var deleteFuelConsumeFlag : Bool
+        let fuelConsumes = getAllFuelConsumes()
+        for fuelConsume in fuelConsumes {
+            if fuelConsume.id == fuelConsumeId {
+                self.moc.delete(fuelConsume)
+            }
+        }
+        deleteFuelConsumeFlag = saveContext()
+        return deleteFuelConsumeFlag
+    }
+    
     private func saveContext() -> Bool{
         var saveFlag = false
         do {

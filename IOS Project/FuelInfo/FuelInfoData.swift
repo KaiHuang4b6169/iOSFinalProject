@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class FuelInfo{
+class FuelInfoData{
     var upOrDown: String
     var upOrDownPrice: String
     var fuel92: String

@@ -16,6 +16,11 @@ struct FView: PreviewProvider {
 }
 
 struct FuelManage: View {
+    @ObservedObject var fuelManageVM: FuelManageViewModel
+    
+    init() {
+        self.fuelManageVM = FuelManageViewModel()
+    }
     @State var isAddModal: Bool = false
     
     var body: some View {
@@ -29,7 +34,7 @@ struct FuelManage: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .sheet(isPresented: $isAddModal, content: {
-                    FuelAddView()
+                    FuelAddView(fuelManageVM: self.fuelManageVM, isPresented: self.$isAddModal)
                 })
             }.frame(maxWidth: .infinity)
             Divider()
@@ -50,33 +55,17 @@ struct FuelManage: View {
                 .padding(.horizontal, 10.0)
             }.frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
             List {
-                FuelRowElement()
-                FuelRowElement()
-                FuelRowElement()
-                FuelRowElement()
-            }
+                ForEach(self.fuelManageVM.fuelConsumes, id: \.id) { fuelConsume in
+                    FuelRowElement(fuelConsume: fuelConsume)
+                }.onDelete(perform: deleteFuelConsume)
+            }.frame(maxHeight: .infinity)
         }.frame(maxWidth: UIScreen.main.bounds.width-40)
     }
-}
-
-
-struct FuelRowElement: View{
-    var body: some View{
-        HStack {
-            HStack{
-                VStack(alignment:.trailing){
-                    Text("X月")
-                    Text("XX日")
-                }
-                Text("95無鉛")
-            }.frame(maxWidth: .infinity,alignment: .leading)
-            HStack{
-                Text("8 里程數")
-                VStack(alignment: .trailing){
-                    Text("$81,000")
-                    Text("10 公升")
-                }
-            }
-        }.frame(maxWidth: .infinity)
+    
+    func deleteFuelConsume(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let fuelConsumeViewModel = self.fuelManageVM.fuelConsumes[index]
+            self.fuelManageVM.deleteFuelConsume(fuelConsume: fuelConsumeViewModel)
+        }
     }
 }
