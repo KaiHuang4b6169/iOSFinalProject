@@ -109,3 +109,15 @@ struct DetailTextFielddRowElement: View{
     }
 }
 
+struct ReportElement: View{
+    let label: String
+    let value: String
+    
+    var body: some View{
+        HStack{
+            Text(label)
+            Text(value)
+        }.padding(.vertical, 10.0).frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+

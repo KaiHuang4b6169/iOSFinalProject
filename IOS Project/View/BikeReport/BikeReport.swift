@@ -48,6 +48,11 @@ struct BikeReportView: View {
 
 
 struct FuelReport: View{
+    @ObservedObject var fuelManageVM: FuelManageViewModel
+    init() {
+        self.fuelManageVM = FuelManageViewModel()
+    }
+     @State var isAddModal: Bool = false
     var body: some View{
         VStack{
             Text("油耗報告").font(.title).padding(.vertical)
@@ -81,14 +86,4 @@ struct MaintenanceReport: View{
     }
 }
 
-struct ReportElement: View{
-    let label: String
-    let value: String
-    
-    var body: some View{
-        HStack{
-            Text(label)
-            Text(value)
-        }.padding(.vertical, 10.0).frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
+
