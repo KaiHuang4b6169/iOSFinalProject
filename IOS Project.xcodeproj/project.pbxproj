@@ -29,12 +29,12 @@
 		9BE90307249691A3001C35EE /* MaintenanceAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE90306249691A3001C35EE /* MaintenanceAddView.swift */; };
 		9BE9030924969D1E001C35EE /* FuelAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE9030824969D1E001C35EE /* FuelAddView.swift */; };
 		9BE9030C24969DF8001C35EE /* AddViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE9030B24969DF8001C35EE /* AddViewComponent.swift */; };
+		DF2059B624A8974C003380DD /* FuelManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2059B524A8974C003380DD /* FuelManageViewModel.swift */; };
+		DF2059B824A89763003380DD /* FuelRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2059B724A89763003380DD /* FuelRowElement.swift */; };
 		DF56C43324A514F80068CC35 /* MaintenaceRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C43224A514F80068CC35 /* MaintenaceRowElement.swift */; };
 		DF56C43C24A609030068CC35 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C43B24A609030068CC35 /* CoreDataManager.swift */; };
 		DF56C43E24A609E30068CC35 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C43D24A609E30068CC35 /* NSManagedObjectContextExtensions.swift */; };
 		DF56C44124A610E50068CC35 /* MaintenanceManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C44024A610E50068CC35 /* MaintenanceManageViewModel.swift */; };
-		DF56C44424A7AD9F0068CC35 /* FuelManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C44324A7AD9F0068CC35 /* FuelManageViewModel.swift */; };
-		DF56C44624A879960068CC35 /* FuelRowElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF56C44524A879960068CC35 /* FuelRowElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,12 +62,12 @@
 		9BE90306249691A3001C35EE /* MaintenanceAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceAddView.swift; sourceTree = "<group>"; };
 		9BE9030824969D1E001C35EE /* FuelAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelAddView.swift; sourceTree = "<group>"; };
 		9BE9030B24969DF8001C35EE /* AddViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewComponent.swift; sourceTree = "<group>"; };
+		DF2059B524A8974C003380DD /* FuelManageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuelManageViewModel.swift; path = ../../../../../../Documents/FuelManageViewModel.swift; sourceTree = "<group>"; };
+		DF2059B724A89763003380DD /* FuelRowElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuelRowElement.swift; path = ../../../../../../Documents/FuelRowElement.swift; sourceTree = "<group>"; };
 		DF56C43224A514F80068CC35 /* MaintenaceRowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenaceRowElement.swift; sourceTree = "<group>"; };
 		DF56C43B24A609030068CC35 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DF56C43D24A609E30068CC35 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		DF56C44024A610E50068CC35 /* MaintenanceManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceManageViewModel.swift; sourceTree = "<group>"; };
-		DF56C44324A7AD9F0068CC35 /* FuelManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FuelManageViewModel.swift; path = ../../../../../../Documents/FuelManageViewModel.swift; sourceTree = "<group>"; };
-		DF56C44524A879960068CC35 /* FuelRowElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FuelRowElement.swift; path = ../../../../../../Documents/FuelRowElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +157,9 @@
 		9BE9030324969129001C35EE /* FuelManage */ = {
 			isa = PBXGroup;
 			children = (
+				DF2059B724A89763003380DD /* FuelRowElement.swift */,
 				9BE902FE2495C589001C35EE /* FuelManage.swift */,
 				9BE9030824969D1E001C35EE /* FuelAddView.swift */,
-				DF56C44524A879960068CC35 /* FuelRowElement.swift */,
 			);
 			path = FuelManage;
 			sourceTree = "<group>";
@@ -201,8 +201,8 @@
 		DF56C43F24A610780068CC35 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DF2059B524A8974C003380DD /* FuelManageViewModel.swift */,
 				DF56C44024A610E50068CC35 /* MaintenanceManageViewModel.swift */,
-				DF56C44324A7AD9F0068CC35 /* FuelManageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -306,15 +306,15 @@
 				DF56C43324A514F80068CC35 /* MaintenaceRowElement.swift in Sources */,
 				9BE9030924969D1E001C35EE /* FuelAddView.swift in Sources */,
 				9BE902FB24954A4F001C35EE /* HomeView.swift in Sources */,
-				DF56C44624A879960068CC35 /* FuelRowElement.swift in Sources */,
+				DF2059B824A89763003380DD /* FuelRowElement.swift in Sources */,
 				DF56C43C24A609030068CC35 /* CoreDataManager.swift in Sources */,
 				9BAFBD9F24A7D6B2005C3BDA /* LoadBikeInfo.swift in Sources */,
 				9BAFBD9724A735D1005C3BDA /* LoadFuelInfo.swift in Sources */,
 				9BE9030C24969DF8001C35EE /* AddViewComponent.swift in Sources */,
 				9BE902FF2495C589001C35EE /* FuelManage.swift in Sources */,
 				9BE902FD24955182001C35EE /* MaintenanceManage.swift in Sources */,
-				DF56C44424A7AD9F0068CC35 /* FuelManageViewModel.swift in Sources */,
 				9BE902E92493C21B001C35EE /* IOS_Project.xcdatamodeld in Sources */,
+				DF2059B624A8974C003380DD /* FuelManageViewModel.swift in Sources */,
 				9BE90307249691A3001C35EE /* MaintenanceAddView.swift in Sources */,
 				DF56C44124A610E50068CC35 /* MaintenanceManageViewModel.swift in Sources */,
 			);
