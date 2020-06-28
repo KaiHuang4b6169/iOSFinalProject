@@ -48,41 +48,48 @@ struct BikeReportView: View {
 
 
 struct FuelReport: View{
-    @ObservedObject var fuelManageVM: FuelManageViewModel
-    init() {
-        self.fuelManageVM = FuelManageViewModel()
-    }
-     @State var isAddModal: Bool = false
+    @State var totalAddFuelCost: String = "$0"
+    @State var totalFuelCapacity: String = "0公升"
     var body: some View{
         VStack{
             Text("油耗報告").font(.title).padding(.vertical)
             VStack{
-                ReportElement(label: "總加油價格", value: "$81,000")
-                ReportElement(label: "總消耗油量", value: "10公升")
+                ReportElement(label: "總加油價格", value: totalAddFuelCost)
+                ReportElement(label: "總消耗油量", value: totalFuelCapacity)
             }.frame(maxWidth: .infinity, alignment: .leading)
-        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top).onAppear(){
+            let fuelManageVM = FuelManageViewModel()
+            let fuelReportData = fuelManageVM.getReportData()
+            self.totalAddFuelCost = "$" + "\(fuelReportData.0)"
+            self.totalFuelCapacity = "\(fuelReportData.1)" + "公升"
+        }
+        
     }
 }
 
 struct MaintenanceReport: View{
+    @State var totalMaintenenceCost: String = "$0"
     var body: some View{
         VStack{
             Text("保養項目報告").font(.title).padding(.vertical)
             VStack{
-                ReportElement(label: "總保養價格", value: "$81,000")
+                ReportElement(label: "總保養價格", value: totalMaintenenceCost)
                 
-                HStack{
-                    ReportElement(label: "更換輪胎次數", value: "5次")
-                    Text("總共花費 8 元").frame(alignment: .trailing)
-                }.padding(.vertical, 10.0).frame(maxWidth: .infinity)
-                
-                HStack{
-                    ReportElement(label: "更換機油次數", value: "5次")
-                    Text("總共花費 8 元").frame(alignment: .trailing)
-                }.padding(.vertical, 10.0).frame(maxWidth: .infinity)
+//                HStack{
+//                    ReportElement(label: "更換輪胎次數", value: "5次")
+//                    Text("總共花費 8 元").frame(alignment: .trailing)
+//                }.padding(.vertical, 10.0).frame(maxWidth: .infinity)
+//
+//                HStack{
+//                    ReportElement(label: "更換機油次數", value: "5次")
+//                    Text("總共花費 8 元").frame(alignment: .trailing)
+//                }.padding(.vertical, 10.0).frame(maxWidth: .infinity)
                 
             }.frame(maxWidth: .infinity, alignment: .leading)
-        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top).onAppear(){
+//            let maintenenceManageVM = MaintenanceManageViewModel()
+            
+        }
     }
 }
 

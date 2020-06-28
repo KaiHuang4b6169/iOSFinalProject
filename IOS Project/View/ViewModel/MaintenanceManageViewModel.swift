@@ -40,6 +40,18 @@ class MaintenanceManageViewModel: ObservableObject {
         deleteFlag = CoreDataManager.shared.deleteMaintenance(maintenanceId: maintenance.id)
         updateMaintenancesData(update: deleteFlag)
     }
+    
+//    public func getReportData() -> (Array<Any>) {
+//        updateMaintenancesData(update: true)
+//        var totalData: Array<Any>
+//        var tireData : Array<Int> = {}
+//        for maintenance in maintenances {
+//            
+//        }
+//        
+//        totalData.append(tireData)
+//        return totalData
+//     }
 }
 
 

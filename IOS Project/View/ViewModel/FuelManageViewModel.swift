@@ -40,6 +40,17 @@ class FuelManageViewModel: ObservableObject {
         deleteFlag = CoreDataManager.shared.deleteFuelConsume(fuelConsumeId: fuelConsume.id)
         updateFuelConsumesData(update: deleteFlag)
     }
+    
+    public func getReportData() -> (Int, Int) {
+        updateFuelConsumesData(update: true)
+        var totalCost = 0
+        var totalFuelCapacity = 0
+        for fuelConsume in fuelConsumes {
+            totalCost += fuelConsume.cost
+            totalFuelCapacity += fuelConsume.fuelCapacity
+        }
+        return (totalCost, totalFuelCapacity)
+    }
 }
 
 class FuelConsumeViewModel {
