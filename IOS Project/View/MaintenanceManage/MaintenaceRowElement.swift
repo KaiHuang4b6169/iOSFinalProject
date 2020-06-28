@@ -27,10 +27,10 @@ struct MaintenaceRowElement: View{
                 Image(maintenance.imageName).resizable().padding(.horizontal, 0.0).scaledToFit().frame(width: 75,height: 75)
                 Text(maintenance.name)
             }.frame(maxWidth: .infinity,alignment: .leading)
-            VStack{
+            VStack(alignment: .trailing){
                 Text("花費:" + "$" + "\(maintenance.cost)")
                 Text("當前里程數:" + "\(maintenance.milage)" + "Km")
-            }.frame(alignment: .trailing)
+            }
         }.frame(maxWidth: .infinity)
         .onTapGesture {
             print("\(self.maintenance.cost)")

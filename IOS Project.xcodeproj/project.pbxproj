@@ -15,6 +15,7 @@
 		9BAFBD9F24A7D6B2005C3BDA /* LoadBikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFBD9E24A7D6B2005C3BDA /* LoadBikeInfo.swift */; };
 		9BAFBDA224A7D6EF005C3BDA /* PairStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFBDA124A7D6EF005C3BDA /* PairStructure.swift */; };
 		9BAFBDA624A83932005C3BDA /* BikeInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFBDA524A83932005C3BDA /* BikeInfoData.swift */; };
+		9BAFBDAB24A8A5A5005C3BDA /* MaintenanceOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFBDAA24A8A5A5005C3BDA /* MaintenanceOptions.swift */; };
 		9BE902E42493C21B001C35EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE902E32493C21B001C35EE /* AppDelegate.swift */; };
 		9BE902E62493C21B001C35EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE902E52493C21B001C35EE /* SceneDelegate.swift */; };
 		9BE902E92493C21B001C35EE /* IOS_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BE902E72493C21B001C35EE /* IOS_Project.xcdatamodeld */; };
@@ -46,6 +47,7 @@
 		9BAFBD9E24A7D6B2005C3BDA /* LoadBikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBikeInfo.swift; sourceTree = "<group>"; };
 		9BAFBDA124A7D6EF005C3BDA /* PairStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairStructure.swift; sourceTree = "<group>"; };
 		9BAFBDA524A83932005C3BDA /* BikeInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeInfoData.swift; sourceTree = "<group>"; };
+		9BAFBDAA24A8A5A5005C3BDA /* MaintenanceOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceOptions.swift; sourceTree = "<group>"; };
 		9BE902E02493C21B001C35EE /* IOS Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE902E32493C21B001C35EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BE902E52493C21B001C35EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				DF56C43B24A609030068CC35 /* CoreDataManager.swift */,
 				DF56C43D24A609E30068CC35 /* NSManagedObjectContextExtensions.swift */,
 				9BAFBD9C24A7A2DC005C3BDA /* ExtensionString.swift */,
+				9BAFBDAA24A8A5A5005C3BDA /* MaintenanceOptions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				9BAFBD9F24A7D6B2005C3BDA /* LoadBikeInfo.swift in Sources */,
 				9BAFBD9724A735D1005C3BDA /* LoadFuelInfo.swift in Sources */,
 				9BE9030C24969DF8001C35EE /* AddViewComponent.swift in Sources */,
+				9BAFBDAB24A8A5A5005C3BDA /* MaintenanceOptions.swift in Sources */,
 				9BE902FF2495C589001C35EE /* FuelManage.swift in Sources */,
 				9BE902FD24955182001C35EE /* MaintenanceManage.swift in Sources */,
 				9BE902E92493C21B001C35EE /* IOS_Project.xcdatamodeld in Sources */,

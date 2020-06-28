@@ -14,7 +14,7 @@ import SwiftUI
 struct MaintenanceAddView: View{
     let maintenanceManageVM: MaintenanceManageViewModel
     @Binding var isPresented: Bool
-    @State private var maintenanceItemName = "輪胎"
+    @State private var maintenanceItemName = ""
     @State private var storeName = ""
     @State private var currentMilage = ""
     @State private var maintenanceDate = Date()
@@ -23,7 +23,7 @@ struct MaintenanceAddView: View{
     
     var body: some View {
         VStack{
-            OptionRowElement(commonTextFieldValue: $maintenanceItemName,label: "保養項目").padding(.vertical, 10.0)
+            OptionRowElement(commonTextFieldValue: $maintenanceItemName, optionsList: MaintenanceOptions().options,label: "保養項目").padding(.vertical, 10.0)
             TextFieldRowElement(commonTextFieldValue: $storeName, label: "店家名稱").padding(.vertical, 10.0)
             NumberTextFieldRowElement(commonTextFieldValue: $currentMilage, label: "當前里程數").padding(.vertical, 10.0)
             TimeFieldRowElement(label: "保養時間", date: $maintenanceDate).padding(.vertical, 10.0)
