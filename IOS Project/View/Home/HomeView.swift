@@ -33,7 +33,7 @@ struct HomeView: View {
 struct BikeInfo: View {
     @State private var ImageHeight:CGFloat = 150
     @State private var ImageWidth:CGFloat = 150
-    @State private var bikeLicense = "XXXXX"
+    @State private var bikeInfoData: BikeInfoData = BikeInfoData(bikeNo: "未設定",bikeBrand: "未設定",bikeCc: "0",bikeIssueDate: "19000101")
     
     
     @State private var showAlert = false
@@ -44,9 +44,13 @@ struct BikeInfo: View {
             textField.placeholder = "機車車牌"
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in })
-    alert.addAction(UIAlertAction(title: "Done", style: .default) {
-         (action) in self.bikeLicense = "AAAA"
-    })
+        alert.addAction(UIAlertAction(title: "Done", style: .default) {
+            (action) in
+            let bikeNo = alert.textFields?[0].text ?? "000"
+            let loadBikeInfo: LoadBikeInfo = LoadBikeInfo(bikeNo: bikeNo)
+            loadBikeInfo.exec()
+            self.bikeInfoData = loadBikeInfo.getBikeInfoData()
+        })
         showAlert(alert: alert)
     }
 
@@ -92,10 +96,10 @@ struct BikeInfo: View {
             HStack{
                 Image("default").resizable().padding(.horizontal, 0.0).scaledToFit().frame(width: ImageWidth,height: ImageHeight, alignment: .leading)
                 VStack(alignment: .leading){
-                    Text("機車牌照： " + self.bikeLicense).padding(.bottom, 20)
-                    Text("機車品牌： ＸＸ牌").padding(.bottom, 20)
-                    Text("排氣量： ＸＸＸ cc").padding(.bottom, 20)
-                    Text("發照日： xx/xx/xx")
+                    Text("機車牌照： " + self.bikeInfoData.bikeNo).padding(.bottom, 20)
+                    Text("機車品牌： " + self.bikeInfoData.bikeBrand).padding(.bottom, 20)
+                    Text("排氣量： " + self.bikeInfoData.bikeCc + " cc").padding(.bottom, 20)
+                    Text("發照日： " + self.bikeInfoData.bikeIssueDate)
                 }.frame(maxWidth: .infinity)
                 .padding(14.0)
             }
@@ -110,7 +114,7 @@ struct BikeInfo: View {
 
 struct TodayOilPrice: View{
     @State var loadFuelInfo: LoadFuelInfo = LoadFuelInfo()
-    @State var flueInfo: FuelInfo = FuelInfo(upOrDown: "調漲", upOrDownPrice: "0.0", fuel92: "0.0", fuel95: "0.0", fuel98: "0.0")
+    @State var flueInfo: FuelInfoData = FuelInfoData(upOrDown: "調漲", upOrDownPrice: "0.0", fuel92: "0.0", fuel95: "0.0", fuel98: "0.0")
     
     var body: some View{
         VStack(alignment: .leading){

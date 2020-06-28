@@ -9,7 +9,7 @@
 import Foundation
 
 class LoadFuelInfo {
-    private var fuelInfo: FuelInfo? = nil
+    private var fuelInfo: FuelInfoData? = nil
     
     init(){
     }
@@ -24,8 +24,8 @@ class LoadFuelInfo {
         }
     }
     
-    func getFuelInfo()->FuelInfo{
-        return self.fuelInfo ?? FuelInfo(upOrDown: "上漲", upOrDownPrice: "0.0", fuel92: "0.0", fuel95: "0.0", fuel98: "0.0")
+    func getFuelInfo()->FuelInfoData{
+        return self.fuelInfo ?? FuelInfoData(upOrDown: "上漲", upOrDownPrice: "0.0", fuel92: "0.0", fuel95: "0.0", fuel98: "0.0")
     }
     
     func codableToEntity(codable: FuelInfoCodable){
@@ -35,7 +35,7 @@ class LoadFuelInfo {
         var upOrDown = self.getUpOrDownState(upOrDown_Html: codable.UpOrDown_Html)
         var upOrDownPrice = self.getUpOrDownPrice(upOrDown_Html: codable.UpOrDown_Html)
         
-        self.fuelInfo = FuelInfo(upOrDown: upOrDown, upOrDownPrice: upOrDownPrice, fuel92: fuel92, fuel95: fuel95, fuel98: fuel98)
+        self.fuelInfo = FuelInfoData(upOrDown: upOrDown, upOrDownPrice: upOrDownPrice, fuel92: fuel92, fuel95: fuel95, fuel98: fuel98)
     }
     
     func getUpOrDownState(upOrDown_Html: String)->String{
@@ -44,7 +44,7 @@ class LoadFuelInfo {
         return String(upOrDownTag.subStr(startIndex: "<b class=\"sys\">".count, endIndex: upOrDownTag.count - "</b>".count))
     }
     
-    func getUpOrDownPrice(upOrDown_Html: String)->String{        
+    func getUpOrDownPrice(upOrDown_Html: String)->String{
         var upOrDownTag: String = upOrDown_Html.subStrWithRegex(regex: "<i>.*</i>")[0]
 
         return String(upOrDownTag.subStr(startIndex: "<i>".count, endIndex: upOrDownTag.count - "</i>".count))
