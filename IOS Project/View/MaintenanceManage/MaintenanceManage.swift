@@ -17,6 +17,8 @@ struct MView: PreviewProvider {
 
 struct MaintenanceManage: View {
     @ObservedObject var maintenanceManageVM: MaintenanceManageViewModel
+    @State var timeOptions = ["一個月","三個月","六個月"]
+    @State var timeSelected: String = ""
     
     init() {
         self.maintenanceManageVM = MaintenanceManageViewModel()
@@ -40,22 +42,7 @@ struct MaintenanceManage: View {
             
             Divider()
             
-            HStack{
-                Text("時間區間")
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                    ZStack{
-                        Text("Option").foregroundColor(Color.gray)
-                        Image(systemName: "arrowtriangle.down.square.fill")
-                            .padding(.horizontal, 5.0)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .foregroundColor(Color.gray)
-                    }
-                }
-                .frame(height: 30)
-                .border(Color.gray, width: 1)
-                .cornerRadius(5)
-                .padding(.horizontal, 10.0)
-            }.frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
+            OptionRowElement(commonTextFieldValue: $timeSelected, optionsList: timeOptions,label: "時間區間").frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
             List {
                 ForEach(self.maintenanceManageVM.maintenances, id: \.id) { maintenance in
                     MaintenaceRowElement(maintenance: maintenance)

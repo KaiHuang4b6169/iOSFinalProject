@@ -11,13 +11,16 @@ import SwiftUI
 
 struct OptionRowElement: View{
     @Binding var commonTextFieldValue :String
+    @State var isOptionClick: Bool = false
+    @State var optionsList: [String]
+    @State var optionSelected: String = ""
     let label: String
     var body: some View{
         HStack{
             Text(label).frame(maxWidth: UIScreen.main.bounds.width/4, alignment: .leading)
-            Button(action: {}) {
+            Button(action: {self.isOptionClick = true}) {
                 ZStack{
-                    Text("Option").foregroundColor(Color.gray)
+                    Text(self.commonTextFieldValue).foregroundColor(Color.gray)
                     Image(systemName: "arrowtriangle.down.square.fill")
                         .padding(.horizontal, 5.0)
                         .frame(maxWidth: .infinity, alignment: .trailing)
@@ -27,7 +30,26 @@ struct OptionRowElement: View{
             .frame(height: 30)
             .padding(.horizontal, 10.0)
             .border(Color.gray, width: 1)
-        }.frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
+            .sheet(isPresented: $isOptionClick){
+                
+                Picker(selection: self.$optionSelected, label: Text("")) {
+                    ForEach(self.optionsList, id: \.self){
+                        (option) in Text(option).tag(option)
+                    }
+                }.frame(width:UIScreen.main.bounds.width/2).clipped()
+                Button(action: {
+                    self.commonTextFieldValue = self.optionSelected == "" ? self.commonTextFieldValue : self.optionSelected
+                    self.isOptionClick = false
+                }) {
+                    Text("完成")
+                }
+            }
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
+        .onAppear(){
+            self.commonTextFieldValue = self.optionsList[0]
+        }
     }
 }
 

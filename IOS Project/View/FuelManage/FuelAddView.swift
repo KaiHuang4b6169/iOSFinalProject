@@ -12,7 +12,8 @@ import SwiftUI
 struct FuelAddView: View{
     let fuelManageVM: FuelManageViewModel
     @Binding var isPresented: Bool
-    @State private var fuelItemName = "92無鉛汽油"
+    @State private var fuelItemName = ""
+    @State private var fuelItemNameList = ["92無鉛汽油","95無鉛汽油","98無鉛汽油"]
     @State private var fuelCompany = "中油"
     @State private var fuelCapacity = ""
     @State private var fuelDate = Date()
@@ -21,7 +22,7 @@ struct FuelAddView: View{
     @State private var detailMessage = ""
     var body: some View {
         VStack{
-            OptionRowElement(commonTextFieldValue: $fuelItemName, label: "油品").padding(.vertical, 10.0)
+            OptionRowElement(commonTextFieldValue: $fuelItemName, optionsList: fuelItemNameList, label: "油品").padding(.vertical, 10.0)
             TextFieldRowElement(commonTextFieldValue: $fuelCompany, label: "石油公司").padding(.vertical, 10.0)
             NumberTextFieldRowElement(commonTextFieldValue: $fuelCapacity, label: "油量").padding(.vertical, 10.0)
             TimeFieldRowElement(label: "加油時間", date: $fuelDate).padding(.vertical, 10.0)

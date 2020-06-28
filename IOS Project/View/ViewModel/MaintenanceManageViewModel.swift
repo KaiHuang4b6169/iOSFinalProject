@@ -41,17 +41,35 @@ class MaintenanceManageViewModel: ObservableObject {
         updateMaintenancesData(update: deleteFlag)
     }
     
-//    public func getReportData() -> (Array<Any>) {
-//        updateMaintenancesData(update: true)
-//        var totalData: Array<Any>
-//        var tireData : Array<Int> = {}
-//        for maintenance in maintenances {
-//            
-//        }
-//        
-//        totalData.append(tireData)
-//        return totalData
-//     }
+    public func getReportData()  -> (Array<Int>, Array<Int>, Array<Int>, Array<Int>, Array<Int>){
+        updateMaintenancesData(update: true)
+        
+        var tireData = [0, 0]
+        var motorOilData = [0, 0]
+        var batteryData = [0, 0]
+        var marsPlugData = [0, 0]
+        var gearOilData = [0, 0]
+        for maintenance in maintenances {
+            if maintenance.name == MaintenanceOptions().options[0] {
+                tireData[0] = tireData[0] + 1
+                tireData[1] = tireData[1] + maintenance.cost
+            }else if maintenance.name == MaintenanceOptions().options[1] {
+                motorOilData[0] = motorOilData[0] + 1
+                motorOilData[1] = motorOilData[1] + maintenance.cost
+            }else if maintenance.name == MaintenanceOptions().options[2] {
+                batteryData[0] = batteryData[0] + 1
+                batteryData[1] = batteryData[1] + maintenance.cost
+            }else if maintenance.name == MaintenanceOptions().options[3] {
+                marsPlugData[0] = marsPlugData[0] + 1
+                marsPlugData[1] = marsPlugData[1] + maintenance.cost
+            }else if maintenance.name == MaintenanceOptions().options[4] {
+                gearOilData[0] = gearOilData[0] + 1
+                gearOilData[1] = gearOilData[1] + maintenance.cost
+            }
+        }
+        
+        return (tireData, motorOilData, batteryData, marsPlugData, gearOilData)
+     }
 }
 
 
